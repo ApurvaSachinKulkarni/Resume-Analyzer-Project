@@ -1,0 +1,30 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: #4b0026;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertical center */
+    align-items: center;     /* Horizontal center */
+}
+
+button {
+    background-color: #4b0026;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.skills-list {
+    column-count: 2;       /* Number of columns you want */
+    column-gap: 40px;      /* Space between columns */
+    list-style-type: disc; /* Keep bullet points */
+    padding-left: 20px;    /* Ensure bullets are aligned nicely */
+}
+
