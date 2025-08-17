@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Analyzer</title>
+    <link rel="stylesheet" href="{% static 'analyzer_app/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Analyzer</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <label for="resume">Upload Resume:</label><br>
+            <input type="file" name="resume" required><br><br>
+
+            <label for="skills">Required Skills (comma separated):</label><br>
+            <textarea name="skills" rows="4" cols="40" placeholder="e.g. Python, Java, ML, SQL"></textarea><br><br>
+
+            <button type="submit">Analyze</button>
+        </form>
+<br>
+    {% if skills %}
+        <p><strong>Score: {{ score }}%</strong></p>
+        <h3>Matched Skills</h3>
+        <div class="skills-list"><ul>
+            {% for skill in skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+        </div>
+    {% endif %}
+    </div>
+</body>
+</html>
+
+
